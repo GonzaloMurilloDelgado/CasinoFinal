@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Blackjack PUPU</title>
+    <link rel="stylesheet" href="../css/blackjack.css">
+
+</head>
+<body>
+
+<header>
+    <div class="logo">PUPU CASINO</div>
+
+    <div class="usuario">
+        <span class="icono">👤</span>
+       <div>
+           <div>Mi cuenta</div>
+           <div class="saldo" id="saldo"></div>
+       </div>
+    </div>
+</header>
+
+<h1>BLACKJACK MEGAPUPU</h1>
+
+<div id="main">
+
+
+    <div class="panel zona-jugador">
+        <h2>Jugador</h2>
+        <div class="cartas" id="cartas-jugador"></div>
+        <div class="puntos" id="puntos-jugador">Puntos: 0</div>
+    </div>
+
+
+    <div class="panel zona-crupier">
+        <h2>Crupier</h2>
+        <div class="cartas" id="cartas-crupier"></div>
+        <div class="puntos" id="puntos-crupier">Puntos: 0</div>
+    </div>
+
+
+
+
+
+    <div class="panel zona-apuesta">
+        <h2>Apuesta</h2>
+        <div class="fichas">
+            <button class="chip" id="chip10">10</button>
+            <button class="chip" id="chip25">25</button>
+            <button class="chip" id="chip50">50</button>
+            <button class="chip" id="chip100">100</button>
+        </div>
+
+        <div id="apuestaActual">Apuesta actual: 0 €</div>
+
+        <div class="opciones-juego">
+            <button id="btnNuevaPartida">NUEVA PARTIDA</button>
+            <button id="btnPedirCarta">PEDIR CARTA</button>
+            <button id="btnPlantarse">PLANTARSE</button>
+            <button id="btnVolverACasino">VOLVER AL CASINO</button>
+        </div>
+
+        <div id="mensaje"></div>
+
+    </div>
+
+</div>
+<script src="../js/blackjackYo.js"></script>
+</body>
+</html>

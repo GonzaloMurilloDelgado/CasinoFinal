@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Tragaperras</title>
+    <link rel="stylesheet" href="../css/Rolling%20Pupu's.css">
+</head>
+
+<body>
+
+<h1>ROLLING SLOTS</h1>
+
+<div class="saldo">
+    <p>SALDO: <span id="balance">100</span></p>
+    <p>ÚLTIMO PREMIO: <span id="lastWin">0</span></p>
+</div>
+
+<hr>
+
+<div class="juego">
+    <div class="iconos" id="s1">❔</div>
+    <div class="iconos" id="s2">❔</div>
+    <div class="iconos" id="s3">❔</div>
+</div>
+
+<hr>
+
+<div class="apuesta">
+    <div class="linea-apuesta">
+        <label for="bet">APUESTA:</label>
+        <input type="number" id="bet" min="1" value="5">
+    </div>
+
+    <div class="botones">
+        <button onclick="maquina.jugar()" id="spin">SPIN</button>
+        <button onclick="maquina.reiniciar()" type="button" id="reset">⟲</button>
+    </div>
+</div>
+
+<hr>
+
+<div class="mensaje">
+    <p id="message" class="msg-neutral">Introduce una apuesta y pulsa SPIN
+        (Si te quedas sin saldo pulsa RESET)</p>
+</div>
+
+<hr>
+
+<div class="premios">
+    <h3>Tabla de premios</h3>
+    <ul>
+        <li>2 iguales → apuesta x2</li>
+        <li>3 iguales → apuesta x10</li>
+        <li>Sin premio → 0</li>
+    </ul>
+</div>
+<script src="../js/Rolling%20Pupu's.js"></script>
+</body>
+</html>

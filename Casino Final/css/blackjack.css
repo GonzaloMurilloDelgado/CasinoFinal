@@ -1,0 +1,331 @@
+body{
+    margin:0;
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: radial-gradient(circle at top, #163321 0%, #0c0f14 55%, #090b0f 100%);
+    color:white;
+    text-align:center;
+}
+
+/* ===== HEADER ESTILO CASINO ===== */
+header{
+    background-color:#111;
+    border-bottom:2px solid gold;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    box-shadow:0 4px 20px rgba(0,0,0,0.45);
+}
+
+.logo{
+    color:gold;
+    font-size:26px;
+    font-weight:bold;
+    letter-spacing:2px;
+    text-shadow:0 0 10px rgba(255,215,0,0.25);
+}
+
+.usuario{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:white;
+    font-size:14px;
+}
+
+.usuario .icono{
+    font-size:26px;
+}
+
+.usuario .saldo{
+    color:gold;
+    font-weight:bold;
+    font-size:15px;
+}
+
+/* ===== TITULO ===== */
+h1{
+    margin:22px 10px 10px 10px;
+    color:goldenrod;
+    letter-spacing:3px;
+    text-shadow:0 0 12px rgba(255,215,0,0.18);
+}
+
+h2{
+    color:gold;
+    margin-top:0;
+    margin-bottom:15px;
+    letter-spacing:1px;
+}
+
+/* ===== ESTRUCTURA PRINCIPAL ===== */
+#main{
+    max-width: 1100px;
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 28px;
+    flex-wrap: wrap;
+}
+
+/* ===== PANELES ESTILO RULETA ===== */
+.panel{
+    background:linear-gradient(180deg, #141922 0%, #10151d 100%);
+    padding:22px;
+    border-radius:18px;
+    box-shadow:0 0 35px rgba(0,0,0,0.75);
+    border:1px solid rgba(255,215,0,0.08);
+}
+
+/* ===== ZONAS DEL BLACKJACK ===== */
+.zona-jugador,
+.zona-crupier{
+    min-width:290px;
+    max-width:360px;
+    flex:1 1 320px;
+}
+
+.zona-apuesta{
+    min-width:280px;
+    max-width:340px;
+    flex:0 1 320px;
+}
+
+/* ===== ÁREA DE CARTAS ===== */
+.cartas{
+    min-height:130px;
+    background:
+        radial-gradient(circle at center, rgba(255,255,255,0.03), rgba(255,255,255,0) 60%),
+        linear-gradient(180deg, #0e4128 0%, #0b2d1d 100%);
+    border:2px solid rgba(255,215,0,0.22);
+    border-radius:14px;
+    margin:16px 0 12px;
+    padding:16px 12px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
+    box-shadow:
+        inset 0 0 18px rgba(0,0,0,0.35),
+        0 0 16px rgba(0,0,0,0.15);
+}
+
+/* Si en JS creas divs/span con clase carta */
+.carta{
+    width:62px;
+    height:88px;
+    border-radius:10px;
+    background:linear-gradient(180deg, #ffffff 0%, #ececec 100%);
+    color:#111;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+    font-size:20px;
+    border:2px solid #d9d9d9;
+    box-shadow:
+        0 4px 10px rgba(0,0,0,0.35),
+        inset 0 1px 0 rgba(255,255,255,0.8);
+    position:relative;
+}
+
+/* Cartas rojas por si en JS aplicas clase roja */
+.carta.roja{
+    color:#c40000;
+}
+
+/* Carta oculta del crupier */
+.carta.oculta{
+    background:linear-gradient(135deg, #1d2940 0%, #0b1220 100%);
+    color:transparent;
+    border:2px solid gold;
+}
+
+.carta.oculta::before{
+    content:"🂠";
+    color:gold;
+    font-size:24px;
+}
+
+/* ===== PUNTOS ===== */
+.puntos{
+    font-size:18px;
+    color:#ddd;
+    font-weight:bold;
+    letter-spacing:0.5px;
+    margin-top:6px;
+}
+
+#puntos-jugador{
+    color:#7CFFB2;
+}
+
+#puntos-crupier{
+    color:#FFD36E;
+}
+
+/* ===== FICHAS DE APUESTA ===== */
+.fichas{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:16px;
+}
+
+.chip{
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    border:3px solid white;
+    cursor:pointer;
+    font-weight:bold;
+    font-size:16px;
+    color:white;
+    transition:transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+    box-shadow:0 0 8px rgba(0,0,0,0.4);
+}
+
+.chip:hover{
+    transform:translateY(-2px) scale(1.04);
+    filter:brightness(1.08);
+}
+
+#chip10{ background:linear-gradient(180deg, #00b894, #008f72); }
+#chip25{ background:linear-gradient(180deg, #e84393, #c21874); }
+#chip50{ background:linear-gradient(180deg, #ff9800, #e67e00); }
+#chip100{ background:linear-gradient(180deg, #2e7d32, #1f5c24); }
+
+.chip.selected{
+    box-shadow:0 0 16px #00ffcc, 0 0 28px rgba(0,255,204,0.35);
+    transform:scale(1.08);
+}
+
+/* ===== TEXTO DE APUESTA Y MENSAJES ===== */
+#apuestaActual{
+    color:gold;
+    font-size:21px;
+    font-weight:bold;
+    margin:14px 0 18px;
+    text-shadow:0 0 10px rgba(255,215,0,0.15);
+}
+
+#mensaje{
+    min-height:34px;
+    margin-top:18px;
+    font-size:18px;
+    font-weight:bold;
+    color:#00ffcc;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:6px 10px;
+}
+
+/* ===== BOTONES ===== */
+.opciones-juego{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-top:10px;
+}
+
+button{
+    padding:11px 22px;
+    border:none;
+    border-radius:22px;
+    background:linear-gradient(180deg, #00cc99 0%, #00a97f 100%);
+    font-weight:bold;
+    cursor:pointer;
+    color:#05130f;
+    transition:transform 0.15s ease, filter 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:hover{
+    transform:translateY(-1px);
+    filter:brightness(1.06);
+    box-shadow:0 0 14px rgba(0,204,153,0.25);
+}
+
+/* Botón volver con tono más neutro */
+#btnVolverACasino{
+    background:linear-gradient(180deg, gold 0%, orange 100%);
+    color:black;
+}
+
+/* ===== EFECTOS VISUALES DE RESULTADO ===== */
+.ganador{
+    animation:flashGanador 0.5s alternate 4;
+}
+
+@keyframes flashGanador{
+    from{ box-shadow:0 0 0 rgba(0,255,204,0); }
+    to{ box-shadow:0 0 22px rgba(0,255,204,0.75); }
+}
+
+.perdedor{
+    animation:flashPerdedor 0.5s alternate 4;
+}
+
+@keyframes flashPerdedor{
+    from{ box-shadow:0 0 0 rgba(255,80,80,0); }
+    to{ box-shadow:0 0 22px rgba(255,80,80,0.65); }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px){
+    #main{
+        gap:20px;
+        padding:15px;
+    }
+
+    .zona-jugador,
+    .zona-crupier,
+    .zona-apuesta{
+        max-width:none;
+        width:100%;
+    }
+
+    header{
+        padding:15px 20px;
+    }
+
+    .logo{
+        font-size:22px;
+    }
+
+    h1{
+        font-size:34px;
+    }
+}
+
+@media (max-width: 520px){
+    .cartas{
+        min-height:110px;
+        padding:12px 8px;
+        gap:8px;
+    }
+
+    .carta{
+        width:54px;
+        height:78px;
+        font-size:18px;
+    }
+
+    .chip{
+        width:52px;
+        height:52px;
+        font-size:14px;
+    }
+
+    #apuestaActual{
+        font-size:18px;
+    }
+
+    #mensaje{
+        font-size:16px;
+    }
+}

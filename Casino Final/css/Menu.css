@@ -1,0 +1,302 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0d0d0d;
+    background-image: radial-gradient(ellipse at top, #1a0a00 0%, #0d0d0d 60%);
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    min-height: 100vh;
+}
+
+header {
+    background-color: rgba(0,0,0,0.8);
+    border-bottom: 1px solid rgba(255,215,0,0.4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 40px;
+}
+
+.logo {
+    font-family: 'Cinzel', serif;
+    color: gold;
+    font-size: 22px;
+    letter-spacing: 3px;
+}
+
+.usuario {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,215,0,0.08);
+    border: 1px solid rgba(255,215,0,0.3);
+    border-radius: 30px;
+    padding: 6px 16px;
+}
+
+.usuario .icono {
+    font-size: 22px;
+}
+
+.usuario .nombre {
+    font-size: 12px;
+    color: #aaa;
+}
+
+.usuario .saldo {
+    color: gold;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.hero {
+    padding: 70px 20px 40px;
+}
+
+.hero .subtitulo {
+    font-size: 12px;
+    letter-spacing: 5px;
+    color: rgba(255,215,0,0.6);
+    margin-bottom: 16px;
+}
+
+.hero h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(32px, 6vw, 68px);
+    color: gold;
+    line-height: 1.1;
+    text-shadow: 0 0 30px rgba(255,215,0,0.3);
+}
+
+.hero p {
+    color: #888;
+    font-size: 15px;
+    margin-top: 14px;
+    letter-spacing: 1px;
+}
+
+.separador {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 30px auto;
+    max-width: 300px;
+    color: rgba(255,215,0,0.4);
+    font-size: 18px;
+}
+
+.separador::before, .separador::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(255,215,0,0.2);
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto 50px;
+    max-width: 700px;
+    border: 1px solid rgba(255,215,0,0.15);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.stat {
+    flex: 1;
+    min-width: 140px;
+    padding: 20px 10px;
+    border-right: 1px solid rgba(255,215,0,0.15);
+}
+
+.stat:last-child {
+    border-right: none;
+}
+
+.stat .numero {
+    font-family: 'Cinzel', serif;
+    font-size: 28px;
+    color: gold;
+}
+
+.stat .etiqueta {
+    font-size: 11px;
+    color: #666;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 4px;
+}
+
+.seccion-titulo {
+    font-family: 'Cinzel', serif;
+    color: gold;
+    font-size: 22px;
+    letter-spacing: 3px;
+    margin-bottom: 6px;
+}
+
+.seccion-sub {
+    color: #555;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+.juegos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 0 30px 60px;
+}
+
+.juego {
+    background: linear-gradient(145deg, #1a1a1a, #111);
+    border: 1px solid rgba(255,215,0,0.2);
+    border-radius: 12px;
+    padding: 28px 20px;
+    width: 160px;
+    cursor: pointer;
+    transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+
+.juego:hover {
+    transform: translateY(-6px);
+    border-color: gold;
+    box-shadow: 0 8px 25px rgba(255,215,0,0.15);
+}
+
+.juego span {
+    font-size: 44px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.juego .nombre-juego {
+    color: #ddd;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.juego .tag {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: rgba(255,215,0,0.7);
+    border: 1px solid rgba(255,215,0,0.3);
+    border-radius: 20px;
+    padding: 2px 10px;
+}
+
+#mensaje {
+    font-size: 14px;
+    color: #4caf76;
+    margin: 0 0 20px;
+    min-height: 22px;
+    letter-spacing: 1px;
+}
+
+footer {
+    border-top: 1px solid rgba(255,215,0,0.1);
+    padding: 24px;
+    color: #444;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+footer .palos {
+    font-size: 20px;
+    letter-spacing: 8px;
+    margin-bottom: 8px;
+    color: rgba(255,215,0,0.2);
+}
+
+/* MODAL */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.modal-box {
+    background: #111;
+    border: 1px solid gold;
+    border-radius: 12px;
+    padding: 30px;
+    width: 300px;
+    text-align: center;
+}
+
+.modal-titulo {
+    color: gold;
+    margin-bottom: 16px;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 2px;
+}
+
+.modal-saldo {
+    color: #aaa;
+    font-size: 13px;
+    margin-bottom: 16px;
+}
+
+.modal-saldo span {
+    color: gold;
+}
+
+.modal-input {
+    width: 100%;
+    padding: 10px;
+    background: #222;
+    border: 1px solid rgba(255,215,0,0.3);
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.modal-error {
+    color: #e05555;
+    font-size: 12px;
+    min-height: 18px;
+    margin-bottom: 10px;
+}
+
+.modal-btns {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-apostar {
+    flex: 2;
+    background: gold;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.btn-cancelar {
+    flex: 1;
+    background: transparent;
+    color: #666;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 12px;
+    cursor: pointer;
+}
