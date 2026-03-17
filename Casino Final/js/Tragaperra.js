@@ -155,6 +155,8 @@ class Tragaperras {
         this.actualizarPantalla();
 
     }
+
+
 }
 
 
@@ -162,13 +164,14 @@ class Tragaperras {
 // Esto inicializa el juego
 let maquina = new Tragaperras();
 
-function volverACasino() {
+function volverACasino(){
+
     let saldoCasino = Number(localStorage.getItem("saldoCasino")) || 0;
 
-    saldoCasino += saldo;
-    localStorage.setItem("saldoCasino", saldoCasino);
+    // sumamos el saldo de la tragaperras
+    saldoCasino += maquina.saldo;
 
-    sessionStorage.removeItem("saldoBlackjack");
+    localStorage.setItem("saldoCasino", saldoCasino);
 
     window.location.href = "../menu/Menu.html";
 }

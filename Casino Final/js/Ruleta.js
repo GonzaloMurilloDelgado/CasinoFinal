@@ -1,7 +1,7 @@
 class RuletaMegaPupu {
 
     constructor(){
-
+        this.saldo = 100;
         this.ficha=0;
         this.apuestas={};
         this.girando=false;
@@ -26,6 +26,7 @@ class RuletaMegaPupu {
 
         this.crearTapete();
         this.loop();
+
     }
 
     selFicha(e,v){
@@ -321,13 +322,15 @@ const juego = new RuletaMegaPupu();
 function selFicha(e,v){ juego.selFicha(e,v); }
 function girar(){ juego.girar(); }
 
-function volverACasino() {
+
+function volverACasino(){
+
     let saldoCasino = Number(localStorage.getItem("saldoCasino")) || 0;
 
-    saldoCasino += saldo;
-    localStorage.setItem("saldoCasino", saldoCasino);
+    // sumamos el saldo de la tragaperras
+    saldoCasino += maquina.saldo;
 
-    sessionStorage.removeItem("saldoBlackjack");
+    localStorage.setItem("saldoCasino", saldoCasino);
 
     window.location.href = "../menu/Menu.html";
 }
