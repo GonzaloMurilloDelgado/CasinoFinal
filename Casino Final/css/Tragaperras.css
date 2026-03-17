@@ -153,20 +153,6 @@ label{
 
 }
 
-#reset{
-    color: white;
-    font-size: 40px;
-    padding: 10px 25px;
-    background-color: black;
-    border-radius: 100px;
-    margin-bottom: 20px;
-    border: none;
-    box-shadow: 0 0 10px black; /*Darle efecto neón*/
-
-}
-
-
-
 .mensaje{
     display: flex;
     justify-content: center;
@@ -212,4 +198,16 @@ label{
 .premios li{
     padding: 6px 0;
     font-weight: 700;
+}
+
+.botonNegro{
+    color: white;
+    font-size: 40px;
+    padding: 10px 25px;
+    background-color: black;
+    border-radius: 100px;
+    margin-bottom: 20px;
+    margin-top:20px;
+    border: none;
+    box-shadow: 0 0 10px black; /*Darle efecto neón*/
 }

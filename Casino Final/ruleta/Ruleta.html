@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ruleta MegaPupu</title>
+    <link href="../css/Ruleta.css" rel="stylesheet">
+</head>
+<body>
+
+<h1>RULETA MEGAPUPU</h1>
+
+<div id="main">
+
+    <div class="panel">
+
+        <canvas id="ruleta" width="350" height="350"></canvas>
+
+        <div>
+            <button class="chip" onclick="selFicha(event,5)">5</button>
+            <button class="chip" onclick="selFicha(event,10)">10</button>
+            <button class="chip" onclick="selFicha(event,50)">50</button>
+            <button class="chip" onclick="selFicha(event,100)">100</button>
+            <button class="chip" onclick="selFicha(event,500)">500</button>
+        </div>
+
+        <button onclick="girar()">GIRAR</button>
+
+        <div id="resultado"></div>
+        <div id="historial"></div>
+
+        <div id="stats">
+            <div>Más frecuente: <span id="mas"></span></div>
+            <div>Menos frecuente: <span id="menos"></span></div>
+        </div>
+
+    </div>
+
+    <div class="panel">
+        <div id="tapete"></div>
+    </div>
+
+    <div>
+        <button id="btnVolverACasino">VOLVER AL CASINO</button>
+    </div>
+</div>
+<script src="../js/Ruleta.js"></script>
+</body>
+</html>

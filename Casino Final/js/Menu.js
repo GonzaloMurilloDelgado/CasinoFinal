@@ -67,7 +67,11 @@ function confirmar(nombre) {
         window.location.href = "../blackjack/blackjackYo.html";
     }
 
-    if (nombre === "Rolling Pupu\'s") {
-        window.location.href = "../tragaperras/Rolling Pupu's.html"
+    if (nombre === "Rolling Pupus") {
+        window.location.href = "../tragaperras/Tragaperras.html"
+    }
+
+    if (nombre === "Ruleta MegaPupu") {
+        window.location.href = "../ruleta/Ruleta.html"
     }
 }

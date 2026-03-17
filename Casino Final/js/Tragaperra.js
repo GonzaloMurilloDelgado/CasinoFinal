@@ -155,33 +155,20 @@ class Tragaperras {
         this.actualizarPantalla();
 
     }
-
-
-// Método que reinicia la máquina
-    reiniciar(){
-
-        // Restablece el saldo inicial
-        this.saldo = 100;
-
-        // Reinicia el último premio
-        this.ultimoPremio = 0;
-
-        // Vuelve a poner los iconos en interrogación
-        this.s1.textContent="❔";
-        this.s2.textContent="❔";
-        this.s3.textContent="❔";
-
-        // Mensaje inicial del juego
-        this.message.textContent="Introduce una apuesta y pulsa SPIN (Si te quedas sin saldo pulsa RESET)";
-
-        // Actualiza los valores en pantalla
-        this.actualizarPantalla();
-
-    }
-
 }
 
 
 // Se crea un objeto llamado maquina a partir de la clase Tragaperras
 // Esto inicializa el juego
 let maquina = new Tragaperras();
+
+function volverACasino() {
+    let saldoCasino = Number(localStorage.getItem("saldoCasino")) || 0;
+
+    saldoCasino += saldo;
+    localStorage.setItem("saldoCasino", saldoCasino);
+
+    sessionStorage.removeItem("saldoBlackjack");
+
+    window.location.href = "../menu/Menu.html";
+}
