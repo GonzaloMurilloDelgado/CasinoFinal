@@ -1,65 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="../css/Menu.css">
-        <script src="../js/Menu.js" defer></script>
-    </head>
-    <body>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/Menu.css">
+    <script src="../js/Menu.js" defer></script>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="login-screen">
+    <h1>♕ PUPU CASINO ♛</h1>
+
+    <div id="panel-login">
+        <h2>Iniciar sesión</h2>
+        <input type="text" id="login-usuario" placeholder="Usuario">
+        <input type="password" id="login-pass" placeholder="Contraseña">
+        <p id="login-error" class="error"></p>
+        <button onclick="iniciarSesion()">ENTRAR</button>
+        <button class="secundario" onclick="mostrarPanel('panel-registro')">Crear cuenta</button>
+    </div>
+
+    <div id="panel-registro" class="hidden">
+        <h2>Crear cuenta</h2>
+        <input type="text" id="reg-usuario" placeholder="Usuario">
+        <input type="password" id="reg-pass" placeholder="Contraseña">
+        <input type="password" id="reg-pass2" placeholder="Repetir contraseña">
+        <p id="reg-error" class="error"></p>
+        <button onclick="registrar()">REGISTRARSE</button>
+        <button class="secundario" onclick="mostrarPanel('panel-login')">Ya tengo cuenta</button>
+    </div>
+</div>
+
+<!-- CASINO -->
+<div id="casino-screen" class="hidden">
 
     <header>
         <div class="logo">♕ PUPU CASINO ♛</div>
         <div class="usuario">
-            <span class="icono">👤</span>
-            <div>
-                <div class="nombre">Mi cuenta</div>
-                <div class="saldo" id="saldo">10.000 €</div>
-            </div>
+            <span id="nombre-usuario"></span>
+            <span id="saldo">10.000 €</span>
+            <button onclick="cerrarSesion()">Salir</button>
         </div>
     </header>
 
     <div class="hero">
-        <div class="subtitulo">✹ BIENVENIDO ✹</div>
         <h1>LA FORTUNA<br>TE ESPERA</h1>
-        <p>El casino favorito de todos. Empieza a ganar desde hoy.</p>
+        <p>El casino favorito de todos.</p>
     </div>
-
-    <div class="separador">♦</div>
-
-    <div class="stats">
-        <div class="stat"><div class="numero">500+</div><div class="etiqueta">Juegos</div></div>
-        <div class="stat"><div class="numero">24/7</div><div class="etiqueta">Soporte</div></div>
-        <div class="stat"><div class="numero">$5M+</div><div class="etiqueta">Premios</div></div>
-        <div class="stat"><div class="numero">50K+</div><div class="etiqueta">Jugadores</div></div>
-    </div>
-
-    <div class="seccion-titulo">NUESTROS JUEGOS</div>
-    <div class="seccion-sub">ELIGE TU DESTINO</div>
 
     <div id="mensaje"></div>
 
     <div class="juegos">
         <div class="juego" onclick="jugar('Blackjack MegaPupu')">
             <span>🂡</span>
-            <div class="nombre-juego">Blackjack MegaPupu</div>
-            <span class="tag">Clásico</span>
-
+            <div>Blackjack MegaPupu</div>
         </div>
         <div class="juego" onclick="jugar('Ruleta MegaPupu')">
             <span>🎡</span>
-            <div class="nombre-juego">Ruleta MegaPupu</div>
-            <span class="tag">En vivo</span>
+            <div>Ruleta MegaPupu</div>
         </div>
-        <div class="juego" onclick="jugar('Rolling Pupus')">
+        <div class="juego" onclick="jugar('Rolling Pupu\'s')">
             <span>🎰</span>
-            <div class="nombre-juego">Rolling Pupu's</div>
-            <span class="tag">Jackpot</span>
+            <div>Rolling Pupu's</div>
         </div>
     </div>
 
-    <footer>
-        <div class="palos">♠ ♥ ♦ ♣</div>
-        © 2026 PUPU Casino — Solo mayores de 18 años
-    </footer>
+    <footer>♠ ♥ ♦ ♣ — © 2026 PUPU Casino</footer>
+
+    <!-- MODAL APUESTA -->
+    <div id="modal" class="hidden">
+        <div class="modal-box">
+            <h3 id="modal-nombre"></h3>
+            <p>Saldo disponible: <strong id="modal-saldo"></strong></p>
+            <input type="number" id="input-apuesta" placeholder="Cantidad a llevar">
+            <p id="error-apuesta" class="error"></p>
+            <button onclick="confirmar()">ENTRAR</button>
+            <button class="secundario" onclick="cerrarModal()">Cancelar</button>
+        </div>
+    </div>
+
+</div>
+
 </body>
 </html>
